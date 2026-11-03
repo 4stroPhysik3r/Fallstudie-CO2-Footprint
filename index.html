@@ -1,0 +1,24 @@
+<!doctype html>
+<!--
+  Einstiegsseite (Vite). Enthält nur das Grundgerüst: Metadaten, Mountpunkt, Einstiegsskript.
+  Der gesamte sichtbare Inhalt entsteht in den Vue-Komponenten (src/components, src/App.*).
+  Die Content-Security-Policy wird vom Build automatisch ergänzt (siehe vite.config.js).
+-->
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CO₂-Footprint – Emissionen von Ländern und Unternehmen</title>
+    <meta
+      name="description"
+      content="Transparente Übersicht darüber, welche Länder und Unternehmen wie viel CO₂ jährlich ausstoßen (fiktive Demonstrationsdaten)."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--  Hinweis, dass für den Browser JavaScript Funktionen aktiviert werden müssen, um die Tabelle darzustellen  -->
+    <noscript>Diese Seite benötigt JavaScript, um die Emissionstabelle anzuzeigen.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

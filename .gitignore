@@ -1,0 +1,29 @@
+# Abhängigkeiten
+node_modules/
+
+# Produktions-Build
+dist/
+dist-ssr/
+
+# Umgebungsvariablen
+.env
+.env.local
+.env.*.local
+
+# Protokolldateien
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# IDE-Einstellungen
+.idea/
+.vscode/
+
+# Optional
+*.swp
+*.swo

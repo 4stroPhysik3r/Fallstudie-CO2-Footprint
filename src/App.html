@@ -1,0 +1,62 @@
+<div id="top" class="min-h-screen bg-slate-50 font-sans text-slate-900 antialiased">
+  <!-- Skip-Link: Tastaturnutzer überspringen die Navigation (WCAG 2.4.1) -->
+  <a
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded focus:bg-white focus:px-3 focus:py-2"
+    href="#inhalt"
+  >
+    Zum Inhalt springen
+  </a>
+
+  <!-- Header: Logo, Titel, globale Navigation -->
+  <AppHeader />
+
+  <!--
+      Layout (Anforderung 3): Das lokale Menü steht im Quelltext VOR dem Content.
+      Der Flex-Container richtet sich nach `dir` aus: LTR → Menü links, RTL → Menü rechts.
+      Mobil (< md) sind beide untereinander gestapelt.
+    -->
+  <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-6 md:flex-row">
+    <LocalMenu />
+
+    <main id="inhalt" class="min-w-0 flex-1 space-y-10">
+      <!-- Übersicht -->
+      <section id="uebersicht" aria-labelledby="h-uebersicht">
+        <h1 id="h-uebersicht" class="text-3xl font-bold text-brand-900">
+          Wer emittiert wie viel CO₂?
+        </h1>
+        <p class="mt-3 max-w-prose text-slate-700">
+          Diese Seite macht sichtbar, welche Länder und Unternehmen jährlich wie viele Megatonnen
+          CO₂ ausstoßen. Nutzen Sie die Tabelle unten, um nach Land oder Unternehmen zu filtern und
+          die Werte zu sortieren.
+        </p>
+        <p
+          class="mt-3 max-w-prose rounded border-s-4 border-amber-500 bg-amber-50 p-3 text-sm text-amber-900"
+        >
+          Hinweis: Alle angezeigten Daten sind <strong>fiktiv</strong> und dienen nur der
+          Demonstration.
+        </p>
+      </section>
+
+      <!-- Filter, Kennzahlen und Tabelle -->
+      <EmissionsTable />
+
+      <!-- Hinweise -->
+      <section id="hinweise" aria-labelledby="h-hinweise">
+        <h2 id="h-hinweise" class="text-2xl font-bold text-brand-900">Hinweise zu den Daten</h2>
+        <ul class="mt-3 max-w-prose list-disc space-y-2 ps-6 text-slate-700">
+          <li>Einheit: Megatonnen CO₂ (Mt) pro Jahr.</li>
+          <li>
+            Länder- und Unternehmenswerte sind getrennte Einträge und dürfen nicht addiert werden;
+            Unternehmensemissionen können in Ländersummen enthalten sein.
+          </li>
+          <li>
+            Sämtliche Werte und Unternehmensnamen sind erfunden und stellen keine realen Messungen
+            dar.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <AppFooter />
+</div>

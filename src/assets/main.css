@@ -1,0 +1,57 @@
+/*
+ * Globales Stylesheet
+ * ------------------------------------------------------------------
+ * 1. Tailwind CSS v4 wird per @import eingebunden (CSS-first-Konfiguration,
+ *    keine tailwind.config.js nötig).
+ * 2. @theme definiert das Designsystem: Markenfarben und Schrift. Daraus
+ *    entstehen automatisch Utilities wie bg-brand-900 oder text-brand-800.
+ * 3. Ergänzende Stile für Dinge, die Utilities nicht sinnvoll abdecken.
+ *    Das Layout selbst entsteht über Tailwind-Klassen in den .html-Dateien.
+ */
+@import 'tailwindcss';
+
+@theme {
+  /* Markenpalette (grün, an Klima/Natur angelehnt). Kontrast brand-900 auf Weiß > 12:1. */
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #15803d;
+  --color-brand-800: #166534;
+  --color-brand-900: #14532d;
+
+  /* Systemschriften: keine externen Font-Requests (Datenschutz, Ladezeit). */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Arial, sans-serif;
+}
+
+/* Gut sichtbarer Tastaturfokus (WCAG 2.4.7), unabhängig vom Browser-Default. */
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Sanftes Scrollen zu Ankern – außer bei Wunsch nach reduzierter Bewegung. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Tabellenzahlen gleich breit, damit Spalten sauber untereinander stehen. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Druckansicht: Navigation und Bedienelemente ausblenden. */
+@media print {
+  header nav,
+  aside,
+  .no-print {
+    display: none !important;
+  }
+}

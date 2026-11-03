@@ -1,0 +1,5 @@
+# Build-Ausgabe und Abhängigkeiten
+node_modules
+
+# Von npm erzeugt, nicht von Hand formatieren
+package-lock.json
