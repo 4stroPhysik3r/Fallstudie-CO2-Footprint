@@ -85,7 +85,7 @@ export function sortRows(rows, key, direction, locale = 'de') {
 export function formatNumber(n, locale = 'de') {
   return new Intl.NumberFormat(locale, {
     minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
+    maximumFractionDigits: 1
   }).format(n);
 }
 

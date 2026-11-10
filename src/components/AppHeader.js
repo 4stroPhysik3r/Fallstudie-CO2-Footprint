@@ -13,5 +13,5 @@ export default {
     const navOpen = ref(false); // mobiles Hauptmenü geöffnet?
     const { dirMode } = useDirection(); // 'auto' | 'ltr' | 'rtl' (geteilter Zustand)
     return { navOpen, dirMode, logoUrl };
-  },
+  }
 };

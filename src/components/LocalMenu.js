@@ -8,8 +8,8 @@ export default {
     const links = [
       { href: '#uebersicht', label: 'Übersicht' },
       { href: '#daten', label: 'Emissionsdaten' },
-      { href: '#hinweise', label: 'Hinweise zu den Daten' },
+      { href: '#hinweise', label: 'Hinweise zu den Daten' }
     ];
     return { links };
-  },
+  }
 };

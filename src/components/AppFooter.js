@@ -6,5 +6,5 @@ export default {
   name: 'AppFooter',
   setup() {
     return { year: new Date().getFullYear() };
-  },
+  }
 };

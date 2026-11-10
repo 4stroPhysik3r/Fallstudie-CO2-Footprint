@@ -1,17 +1,17 @@
 <aside class="md:w-60 md:shrink-0">
-  <nav
-    aria-label="Auf dieser Seite"
-    class="rounded-lg border border-slate-200 bg-white p-4 md:sticky md:top-4"
-  >
-    <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-      Auf dieser Seite
-    </h2>
-    <ul class="space-y-1">
-      <li v-for="link in links" :key="link.href">
-        <a class="block rounded px-2 py-1 text-brand-800 hover:bg-brand-50" :href="link.href"
-          >{{ link.label }}</a
-        >
-      </li>
-    </ul>
-  </nav>
+    <nav
+            aria-label="Auf dieser Seite"
+            class="rounded-lg border border-slate-200 bg-white p-4 md:sticky md:top-4"
+    >
+        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+            Auf dieser Seite
+        </h2>
+        <ul class="space-y-1">
+            <li v-for="link in links" :key="link.href">
+                <a :href="link.href" class="block rounded px-2 py-1 text-brand-800 hover:bg-brand-50"
+                >{{ link.label }}</a
+                >
+            </li>
+        </ul>
+    </nav>
 </aside>

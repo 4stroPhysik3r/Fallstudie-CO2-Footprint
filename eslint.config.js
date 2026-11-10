@@ -9,19 +9,19 @@
  *
  * Entscheidungen:
  *   - Basis: offizielle Empfehlungen von ESLint und eslint-plugin-vue (Vue 3).
- *   - Sicherheitsregeln (Anforderung 6): Code-Ausführung aus Strings und
+ *   - Sicherheitsregeln: Code-Ausführung aus Strings und
  *     unsichere HTML-Ausgabe sind als Fehler gesetzt, damit sie nicht
  *     versehentlich in den Code gelangen.
- *   - Umgebungen getrennt: Browser-Code (src/), Node-Code (tests/, Konfigdateien).
+ *   - Umgebungen getrennt: Browser-Code (src/), Node-Code (tests/, Konfigurationsdateien).
  */
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
-import prettier from 'eslint-config-prettier';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
 
 export default [
   // Build-Ausgabe und Abhängigkeiten nie prüfen.
-  { ignores: ['dist/**', 'node_modules/**'] },
+  { ignores: ['dist/**', 'node_modules/**', '**/*.html'] },
 
   // Grundregeln für JavaScript.
   js.configs.recommended,
@@ -35,8 +35,8 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: { ...globals.browser },
-    },
+      globals: { ...globals.browser }
+    }
   },
 
   // Node-Code: Tests und Konfigurationsdateien.
@@ -45,8 +45,8 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: { ...globals.node },
-    },
+      globals: { ...globals.node }
+    }
   },
 
   // Projektregeln.
@@ -75,11 +75,11 @@ export default [
       // --- Vue: zur Projektstruktur passend ---
       // Komponentennamen sind bewusst mehrteilig (AppHeader, LocalMenu, …);
       // die Wurzelkomponente "App" ist die einzige Ausnahme.
-      'vue/multi-word-component-names': ['error', { ignores: ['App'] }],
-    },
+      'vue/multi-word-component-names': ['error', { ignores: ['App'] }]
+    }
   },
 
   // Muss LETZTER Eintrag sein: schaltet Formatierungsregeln ab, die mit Prettier
   // kollidieren würden (Aufgabenteilung: Prettier formatiert, ESLint prüft).
-  prettier,
+  prettierRecommended
 ];

@@ -1,6 +1,6 @@
 /**
  * Automatisierte Tests für src/lib/logic.js.
- * Ausführen: npm test   (bzw. node --test "tests/*.test.js")
+ * Ausführen: `npm test` (bzw. node --test "tests/*.test.js")
  *
  * Fokus: sicherheitsrelevantes Sanitizing, Filter/Sortierung und Richtungserkennung.
  * Die Tests brauchen weder Vue noch einen Browser – Beleg dafür, dass die Logik

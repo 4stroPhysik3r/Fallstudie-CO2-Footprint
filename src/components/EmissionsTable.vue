@@ -1,3 +1,3 @@
-<!-- Filter, Kennzahlen und sortierbare Tabelle der CO₂-Emissionen (Anforderungen 5 und 6) -->
+<!-- Filter, Kennzahlen und sortierbare Tabelle der CO₂-Emissionen -->
 <template src="./EmissionsTable.html"></template>
 <script src="./EmissionsTable.js"></script>

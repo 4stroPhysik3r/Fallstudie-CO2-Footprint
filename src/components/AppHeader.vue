@@ -1,3 +1,3 @@
-<!-- Header mit Logo, Titel und globaler Navigation (Anforderungen 1 und 2) -->
+<!-- Header mit Logo, Titel und globaler Navigation -->
 <template src="./AppHeader.html"></template>
 <script src="./AppHeader.js"></script>

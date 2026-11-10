@@ -1,3 +1,3 @@
-<!-- Footer mit rechtlichen Hinweisen (Anforderung 2) -->
+<!-- Footer mit rechtlichen Hinweisen -->
 <template src="./AppFooter.html"></template>
 <script src="./AppFooter.js"></script>

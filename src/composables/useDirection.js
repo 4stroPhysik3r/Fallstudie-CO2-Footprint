@@ -24,6 +24,7 @@ function load() {
     return 'auto';
   }
 }
+
 function save(v) {
   try {
     window.localStorage.setItem(STORAGE_KEY, v);
@@ -42,7 +43,7 @@ watch(
     save(mode);
     document.documentElement.setAttribute('dir', resolveDirection(mode, locale));
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 export function useDirection() {

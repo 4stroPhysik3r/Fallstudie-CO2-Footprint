@@ -1,51 +1,51 @@
 <header class="bg-brand-900 text-white">
-  <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-    <!-- Logo + Titel -->
-    <a href="#top" class="flex items-center gap-3">
-      <img :src="logoUrl" alt="" width="44" height="44" class="h-11 w-11" />
-      <span class="text-xl font-bold leading-tight">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
+        <!-- Logo + Titel -->
+        <a class="flex items-center gap-3" href="#top">
+            <img :src="logoUrl" alt="" class="h-11 w-11" height="44" width="44"/>
+            <span class="text-xl font-bold leading-tight">
         CO₂-Footprint
         <span class="block text-xs font-normal text-brand-100">Transparenz für das Klima</span>
       </span>
-    </a>
+        </a>
+        
+        <!-- Hamburger-Button: nur auf kleinen Bildschirmen sichtbar -->
+        <button
+                :aria-expanded="navOpen"
+                aria-controls="hauptnavigation"
+                class="cursor-pointer rounded border border-brand-200 px-3 py-2 text-sm md:hidden"
+                type="button"
+                @click="navOpen = !navOpen"
+        >
+            Menü
+        </button>
 
-    <!-- Hamburger-Button: nur auf kleinen Bildschirmen sichtbar -->
-    <button
-      type="button"
-      class="cursor-pointer rounded border border-brand-200 px-3 py-2 text-sm md:hidden"
-      :aria-expanded="navOpen"
-      aria-controls="hauptnavigation"
-      @click="navOpen = !navOpen"
-    >
-      Menü
-    </button>
-
-    <!-- Globale Navigation: mobil ein-/ausklappbar, ab md immer sichtbar -->
-    <nav
-      id="hauptnavigation"
-      aria-label="Hauptnavigation"
-      class="w-full md:block md:w-auto"
-      :class="navOpen ? 'block' : 'hidden'"
-    >
-      <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-6">
-        <li>
-          <a class="block py-2 hover:underline" href="#top" aria-current="page">Startseite</a>
-        </li>
-        <li><a class="block py-2 hover:underline" href="#daten">Emissionsdaten</a></li>
-        <li><a class="block py-2 hover:underline" href="#hinweise">Methodik</a></li>
-        <li><a class="block py-2 hover:underline" href="#rechtliches">Rechtliches</a></li>
-        <li>
-          <!-- Schriftrichtung: automatisch nach Browsersprache oder manuell wählbar -->
-          <label class="flex items-center gap-2 py-2 text-sm">
-            <span>Schriftrichtung</span>
-            <select v-model="dirMode" class="rounded bg-white px-2 py-1 text-slate-900">
-              <option value="auto">Automatisch</option>
-              <option value="ltr">Links → Rechts</option>
-              <option value="rtl">Rechts → Links</option>
-            </select>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </div>
+        <!-- Globale Navigation: mobil ein-/ausklappbar, ab md immer sichtbar -->
+        <nav
+                id="hauptnavigation"
+                :class="navOpen ? 'block' : 'hidden'"
+                aria-label="Hauptnavigation"
+                class="w-full md:block md:w-auto"
+        >
+            <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-6">
+                <li>
+                    <a aria-current="page" class="block py-2 hover:underline" href="#top">Startseite</a>
+                </li>
+                <li><a class="block py-2 hover:underline" href="#daten">Emissionsdaten</a></li>
+                <li><a class="block py-2 hover:underline" href="#hinweise">Methodik</a></li>
+                <li><a class="block py-2 hover:underline" href="#rechtliches">Rechtliches</a></li>
+                <li>
+                    <!-- Schriftrichtung: automatisch nach Browsersprache oder manuell wählbar -->
+                    <label class="flex items-center gap-2 py-2 text-sm">
+                        <span>Schriftrichtung</span>
+                        <select v-model="dirMode" class="rounded bg-white px-2 py-1 text-slate-900">
+                            <option value="auto">Automatisch</option>
+                            <option value="ltr">Links → Rechts</option>
+                            <option value="rtl">Rechts → Links</option>
+                        </select>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>
